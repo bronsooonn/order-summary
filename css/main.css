@@ -36,12 +36,14 @@ main .challenge__template {
 main .card {
   margin: auto;
   position: relative;
-  top: 8rem;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   border-radius: 15px;
   max-width: 400px;
   background-color: white;
-  -webkit-filter: drop-shadow(0.5em 0.5em 0.75em #7280a7);
-          filter: drop-shadow(0.5em 0.5em 0.75em #7280a7);
+  -webkit-filter: drop-shadow(0.75em 0.75em 0.75em #7280a7);
+          filter: drop-shadow(0.75em 0.75em 0.75em #7280a7);
   -webkit-animation: card-anim 1s ease-in-out;
           animation: card-anim 1s ease-in-out;
 }
@@ -53,7 +55,7 @@ main .card__hero {
 
 main .card .content {
   text-align: center;
-  padding: 1.5rem 2rem;
+  padding: 2.5rem 2.5rem 1rem 2.5rem;
 }
 
 main .card .content .card__header {
@@ -75,7 +77,7 @@ main .card .content .card__plan {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   background-color: #f5f7ff;
   width: 100%;
   margin: 1.5rem 0;
@@ -141,7 +143,7 @@ main .card .content .card__button__cancel {
   opacity: .5;
   -webkit-transition: .1s linear;
   transition: .1s linear;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-weight: 900;
 }
 
@@ -151,44 +153,44 @@ main .card .content .card__button__cancel:hover {
 
 @-webkit-keyframes bg-anim {
   from {
-    top: -10rem;
+    top: -20rem;
     opacity: .5;
   }
   to {
-    top: -3rem;
+    top: -10rem;
     opacity: 1;
   }
 }
 
 @keyframes bg-anim {
   from {
-    top: -10rem;
+    top: -20rem;
     opacity: .5;
   }
   to {
-    top: -3rem;
+    top: -10rem;
     opacity: 1;
   }
 }
 
 @-webkit-keyframes card-anim {
   from {
-    top: 15rem;
+    top: 65%;
     opacity: .5;
   }
   to {
-    top: 8rem;
+    top: 50%;
     opacity: 1;
   }
 }
 
 @keyframes card-anim {
   from {
-    top: 15rem;
+    top: 65%;
     opacity: .5;
   }
   to {
-    top: 8rem;
+    top: 50%;
     opacity: 1;
   }
 }
@@ -196,9 +198,6 @@ main .card .content .card__button__cancel:hover {
 @media screen and (max-width: 375px) {
   .card {
     width: 330px;
-  }
-  .content {
-    padding: 1rem 1rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -32,11 +32,12 @@ main {
     .card {
         margin: auto;
         position: relative;
-        top: 8rem;
+        top: 50%;
+        transform: translate(0, -50%);
         border-radius: 15px;
         max-width: 400px;
         background-color: white;
-        filter: drop-shadow(.5em .5em .75em hsl(224, 23%, 55%));
+        filter: drop-shadow(.75em .75em .75em hsl(224, 23%, 55%));
         animation: card-anim 1s ease-in-out;
 
         &__hero {
@@ -46,7 +47,7 @@ main {
 
         .content {
             text-align: center;
-            padding: 1.5rem 2rem;
+            padding: 2.5rem 2.5rem 1rem 2.5rem;
             
             .card__header {
                 font-size: 1.5em;
@@ -63,7 +64,7 @@ main {
             .card__plan {
                 display: flex;
                 align-items: center;
-                padding: 1rem 2rem;
+                padding: 1rem 1rem;
                 background-color: hsl(225, 100%, 98%);
                 width: 100%;
                 margin: 1.5rem 0;
@@ -123,7 +124,7 @@ main {
                     color: black;
                     opacity: .5;
                     transition: .1s linear;
-                    margin-bottom: 2rem;
+                    margin-bottom: 1.5rem;
                     font-weight: 900;
 
                     &:hover {
@@ -137,24 +138,24 @@ main {
 
 @keyframes bg-anim {
     from {
-        top: -10rem;
+        top: -20rem;
         opacity: .5;
     }
 
     to {
-        top: -3rem;
+        top: -10rem;
         opacity: 1;
     }
 }
 
 @keyframes card-anim {
     from {
-        top: 15rem;
+        top: 65%;
         opacity: .5;
     }
 
     to {
-        top: 8rem;
+        top: 50%;
         opacity: 1;
     }
 }
@@ -162,12 +163,5 @@ main {
 @media screen and (max-width: 375px) {
     .card {
         width: 330px;
-    }
-
-    .content {
-        padding: 1rem 1rem;
-    }
-
-    
-    
+    } 
 }
