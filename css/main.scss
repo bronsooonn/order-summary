@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: hsl(225, 100%, 94%);
+    
+}
+
+main {
+    background-image: url('../images/pattern-background-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    animation: bg-anim 1s ease-in-out;
+    margin-top: -10rem;
+}
+
+.card {
+    position: relative;
+    margin: auto;
+    animation: card-anim 1s ease-in-out;
+    top: 20rem;
+    border-radius: 15px;
+    width: 400px;
+    background-color: white;
+    filter: drop-shadow(.5em .5em .75em hsl(224, 23%, 55%));
+
+    &__hero {
+        border-radius: 15px 15px 0 0;
+        width: 100%;
+    }
+
+    .content {
+        text-align: center;
+        margin: 2.3rem 2.5rem;
+
+        .card__header {
+            font-size: 1.5em;
+            font-weight: 900;
+        }
+        
+        .card__description {
+            opacity: .5;
+            line-height: 1.5;
+            font-size: 0.85em;
+            margin-top: 1em;
+        }
+
+        .card__plan {
+            margin: 2.3rem 1.6rem;
+            display: flex;
+            align-items: center;
+
+            &__name {
+                margin-left: 1rem;
+                font-weight: 900;
+                font-size: 0.9em;
+
+                span {
+                    opacity: .5;
+                    font-size: 1em; 
+                }
+            }
+
+            &__change {
+                color: hsl(245, 75%, 52%);
+                font-weight: bold;
+                margin-left: auto;
+                right: 0;
+                transition: .1s linear;
+                font-size: 0.9em;
+                
+                &:hover {
+                    text-decoration: none;
+                    opacity: .7;
+                }
+            }
+        }
+
+        .card__button {
+            display: grid;
+            margin-bottom: 1rem;
+            
+            
+            &__proceed {
+                color: white;
+                margin-top: 0.5rem;
+                border-radius: 10px;
+                margin-bottom: 1em;
+                transition: .1s linear;
+                filter: drop-shadow(.15em .25em .5em hsl(245, 75%, 52%));
+                background-color: hsl(245, 75%, 52%);
+
+                &:hover {
+                    opacity: .7;
+                }
+            }
+
+            &__cancel {
+                margin-bottom: 3em;
+                color: black;
+                transition: .1s linear;
+                opacity: .5;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            &--btn {
+                text-decoration: none;
+                padding: 1em;
+                font-size: 0.85em;
+                font-weight: bold;
+                width: 100%;    
+            }
+        }
+    }
+}
+
+@keyframes bg-anim {
+    from {
+        margin-top: -20rem;
+        opacity: .5;
+    }
+
+    to {
+        margin-top: -10rem;
+        opacity: 1;
+    }
+}
+
+@keyframes card-anim {
+    from {
+        top: 40rem;
+        opacity: .5;
+    }
+
+    to {
+        top: 20rem;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    main {
+        background-image: url(../images/pattern-background-mobile.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+    }
+}
