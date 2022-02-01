@@ -3,121 +3,133 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Red Hat Display', sans-serif;
-    font-size: 16px;
-}
-
-body {
-    background-color: hsl(225, 100%, 94%);
-    
 }
 
 main {
-    background-image: url('../images/pattern-background-desktop.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    animation: bg-anim 1s ease-in-out;
-    margin-top: -10rem;
-}
+    background-color: hsl(225, 100%, 94%);
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
 
-.card {
-    position: relative;
-    margin: auto;
-    animation: card-anim 1s ease-in-out;
-    top: 20rem;
-    border-radius: 15px;
-    width: 400px;
-    background-color: white;
-    filter: drop-shadow(.5em .5em .75em hsl(224, 23%, 55%));
-
-    &__hero {
-        border-radius: 15px 15px 0 0;
+    .bg__pattern{
+        background-image: url('../images/pattern-background-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
         width: 100%;
+        height: 70vh;
+        position: absolute;
+        top: -10rem;
+        animation: bg-anim 1s ease-in-out;
     }
 
-    .content {
-        text-align: center;
-        margin: 2.3rem 2.5rem;
+    .challenge__template{
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    
+    .card {
+        margin: auto;
+        position: relative;
+        top: 8rem;
+        border-radius: 15px;
+        max-width: 400px;
+        background-color: white;
+        filter: drop-shadow(.5em .5em .75em hsl(224, 23%, 55%));
+        animation: card-anim 1s ease-in-out;
 
-        .card__header {
-            font-size: 1.5em;
-            font-weight: 900;
+        &__hero {
+            width: 100%;
+            border-radius: 15px 15px 0 0;
         }
-        
-        .card__description {
-            opacity: .5;
-            line-height: 1.5;
-            font-size: 0.85em;
-            margin-top: 1em;
-        }
 
-        .card__plan {
-            margin: 2.3rem 1.6rem;
-            display: flex;
-            align-items: center;
-
-            &__name {
-                margin-left: 1rem;
+        .content {
+            text-align: center;
+            padding: 1.5rem 2rem;
+            
+            .card__header {
+                font-size: 1.5em;
                 font-weight: 900;
-                font-size: 0.9em;
-
-                span {
-                    opacity: .5;
-                    font-size: 1em; 
-                }
             }
 
-            &__change {
-                color: hsl(245, 75%, 52%);
-                font-weight: bold;
-                margin-left: auto;
-                right: 0;
-                transition: .1s linear;
-                font-size: 0.9em;
-                
-                &:hover {
-                    text-decoration: none;
-                    opacity: .7;
-                }
-            }
-        }
-
-        .card__button {
-            display: grid;
-            margin-bottom: 1rem;
-            
-            
-            &__proceed {
-                color: white;
-                margin-top: 0.5rem;
-                border-radius: 10px;
-                margin-bottom: 1em;
-                transition: .1s linear;
-                filter: drop-shadow(.15em .25em .5em hsl(245, 75%, 52%));
-                background-color: hsl(245, 75%, 52%);
-
-                &:hover {
-                    opacity: .7;
-                }
-            }
-
-            &__cancel {
-                margin-bottom: 3em;
-                color: black;
-                transition: .1s linear;
-                opacity: .5;
-
-                &:hover {
-                    opacity: 1;
-                }
-            }
-
-            &--btn {
-                text-decoration: none;
-                padding: 1em;
+            .card__description {
                 font-size: 0.85em;
-                font-weight: bold;
-                width: 100%;    
+                margin-top: 1em;
+                opacity: .5;
+                line-height: 1.5;
+            }
+
+            .card__plan {
+                display: flex;
+                align-items: center;
+                padding: 1rem 2rem;
+                background-color: hsl(225, 100%, 98%);
+                width: 100%;
+                margin: 1.5rem 0;
+
+                &__name {
+                    margin-left: 1rem;
+                    font-weight: 700;
+                    font-size: .9em;
+
+                    span {
+                        opacity: .5;
+                        font-size: 1em;
+                    }
+                }
+
+                &__change {
+                    color: hsl(245, 75%, 52%);
+                    font-weight: 700;
+                    margin-left: auto;
+                    font-size: 0.9em;
+                    transition: .1s linear;
+
+                    &:hover {
+                        text-decoration: none;
+                        opacity: .7;
+                    }
+                }
+            }
+
+            .card__button {
+                display: grid;
+                
+                &--btn {
+                    text-decoration: none;
+                    padding: 1em 2em;
+                    font-size: .85em;
+                    font-weight: 500;
+                    width: 100%;
+                }
+
+                &__proceed {
+                    color: white;
+                    margin-top: .5rem;
+                    font-weight: 700;
+                    margin-bottom: 1rem;
+                    border-radius: 10px;
+                    background-color: hsl(245, 75%, 52%);
+                    transition: .1s linear;
+                    filter: drop-shadow(.15em .25em .5em hsl(245, 75%, 52%));
+
+                    &:hover {
+                        opacity: .7;
+                    }
+                }
+
+                &__cancel {
+                    color: black;
+                    opacity: .5;
+                    transition: .1s linear;
+                    margin-bottom: 2rem;
+                    font-weight: 900;
+
+                    &:hover {
+                        opacity: 1;
+                    } 
+                }
             }
         }
     }
@@ -125,33 +137,37 @@ main {
 
 @keyframes bg-anim {
     from {
-        margin-top: -20rem;
+        top: -10rem;
         opacity: .5;
     }
 
     to {
-        margin-top: -10rem;
+        top: -3rem;
         opacity: 1;
     }
 }
 
 @keyframes card-anim {
     from {
-        top: 40rem;
+        top: 15rem;
         opacity: .5;
     }
 
     to {
-        top: 20rem;
+        top: 8rem;
         opacity: 1;
     }
 }
 
 @media screen and (max-width: 375px) {
-    main {
-        background-image: url(../images/pattern-background-mobile.svg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 100%;
+    .card {
+        width: 330px;
     }
+
+    .content {
+        padding: 1rem 1rem;
+    }
+
+    
+    
 }
